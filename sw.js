@@ -2,7 +2,7 @@
 
 // Scope each cache to this repository, including GitHub Pages project URLs.
 const CACHE_PREFIX = 'student-dorm-guide:' + self.registration.scope + ':';
-const CACHE_VERSION = '2026-10-12-v2';
+const CACHE_VERSION = '2026-10-13-v3';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 const APP_ROOT = new URL('./', self.registration.scope).href;
 const INDEX_URL = new URL('index.html', APP_ROOT).href;
