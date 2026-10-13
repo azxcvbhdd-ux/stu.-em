@@ -2,7 +2,7 @@
 
 // Scope each cache to this repository, including GitHub Pages project URLs.
 const CACHE_PREFIX = 'student-dorm-guide:' + self.registration.scope + ':';
-const CACHE_VERSION = '2026-10-13-v3';
+const CACHE_VERSION = '2026-10-13-v4-embedded-logo';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 const APP_ROOT = new URL('./', self.registration.scope).href;
 const INDEX_URL = new URL('index.html', APP_ROOT).href;
@@ -50,6 +50,11 @@ self.addEventListener('fetch', event => {
   // Fetch current content online; use the last saved guide when offline.
   event.respondWith((async () => {
     const cache = await caches.open(CACHE_NAME);
+    // Bundled assets are available immediately from this version's cache.
+    if (request.mode !== 'navigate' && !url.pathname.endsWith('/index.html')) {
+      const saved = await cache.match(url.href);
+      if (saved) return saved;
+    }
     try {
       const response = await fetch(request);
       if (response.ok) {

@@ -43,3 +43,7 @@
 - [تعليمات GitHub Pages الرسمية](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
 - [دعم تثبيت تطبيقات الويب — MDN](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable)
 - [إعداد أيقونة الشاشة الرئيسية على أجهزة Apple](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
+
+## تصحيح ظهور الشعار
+
+شعار المقدمة والصفحة الرئيسية والبطاقات مدمج داخل HTML، ولا ينتظر تنزيل صورة منفصلة. أزيلت حركة الحلقة حول شعار الصفحة الرئيسية. ارفع جميع محتويات الحزمة، بما فيها sw.js، لاستبدال النسخة السابقة.
